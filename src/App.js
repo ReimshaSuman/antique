@@ -1,16 +1,19 @@
-import logo from './logo.svg';
-import {Navbar, NavbarBrand} from 'reactstrap';
+import React from 'react';
+import Navbar from './components/Navbar';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
+import Home from './components/Pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar dark color="primary">
-       <div className="container">
-       <NavbarBrand href="/">Antique</NavbarBrand>
-        </div>
-      </Navbar>
-    </div>
+    <>
+    <Router>
+      <Navbar />
+      <Switch>
+      <Route path='/' exact component = {Home} />
+      </Switch>
+      </Router>    
+  </>
   );
 }
 
